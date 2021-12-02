@@ -1,0 +1,17 @@
+{
+  "name": "opc-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "mon": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "sass": "^1.35.0",
+    "uikit": "^3.6.22"
+  }
+}

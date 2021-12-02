@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Point Challenge</title>
+    <script src="lib/uikit/dist/js/uikit.min.js"></script>
+    <script src="lib/uikit/dist/js/uikit-icons.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header></header>
+
+    <div class="uk-container">
+        <div class="uk-section uk-text-center">
+            <h1 class="uk-heading-small">Admin Game Builder</h1>
+            <button class="uk-button uk-border-rounded uk-button-primary">Preview Game</button>
+            <button class="uk-button uk-border-rounded uk-button-primary">Save Game</button>
+            <button class="uk-button uk-border-rounded uk-button-primary">Publish Game</button>
+        </div>
+        <div class="uk-margin-bottom uk-card uk-card-body uk-card-default uk-border-rounded">
+            <ul uk-tab class="uk-text-large">
+                <li class="uk-active"><a href="">Game Properties</a></li>
+                <li><a href="#">Questions</a></li>
+                <li><a href="#">Finishing Slides</a></li>
+            </ul>
+            <ul class="uk-switcher uk-margin-medium">
+                <li>
+                    <form class="uk-form-horizontal">
+                        <div class="uk-margin">
+                            <label class="uk-form-label">Game name</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input uk-form-width-large" value="The Ascent">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label">Synopsis</label>
+                            <div class="uk-form-controls">
+                                <textarea class="uk-textarea uk-form-width-large" rows="5"> A problem solving game with 10 puzzles and a master problem.
+
+Themed around things that go up - the master problem reveals an amazing human achievement. </textarea>
+                            </div>
+                        </div>
+                        <div class="uk-margin" uk-form-custom>
+                            <label class="uk-form-label">Image</label>
+                            <div class="uk-form-controls uk-form-controls-text">
+                                <button class="uk-button uk-border-rounded uk-button-default uk-margin-bottom">Select</button><br>
+                                <img src="res/games/the-ascent.png" style="width:50%;">
+                            </div>
+                        </div>                        
+                        <div class="uk-margin">
+                            <label class="uk-form-label">Feel</label>
+                            <div class="uk-form-controls uk-form-controls-text">
+                                <label><input class="uk-checkbox uk-margin-small-right" type="checkbox" checked> Open and Invested</label><br>
+                                <label><input class="uk-checkbox uk-margin-small-right" type="checkbox" checked> Focused and Driven</label><br>
+                                <label><input class="uk-checkbox uk-margin-small-right" type="checkbox"> Relaxed and Positive</label><br>
+                                <label><input class="uk-checkbox uk-margin-small-right" type="checkbox"> Energised and ready to start something</label>
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label">Time</label>
+                            <div class="uk-form-controls uk-form-controls-text">
+                                <label><input class="uk-checkbox uk-margin-small-right" type="checkbox"> 15 minutes</label><br>
+                                <label><input class="uk-checkbox uk-margin-small-right" type="checkbox"> 30 minutes</label><br>
+                                <label><input class="uk-checkbox uk-margin-small-right" type="checkbox" checked> 45 minutes</label><br>
+                                <label><input class="uk-checkbox uk-margin-small-right" type="checkbox" checked> 60+ minutes</label>
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label">Group Size</label>
+                            <div class="uk-form-controls uk-form-controls-text">
+                                <label><input class="uk-checkbox uk-margin-small-right" type="checkbox" checked> &lt; 20 people</label><br>
+                                <label><input class="uk-checkbox uk-margin-small-right" type="checkbox" checked> 20 - 50 people</label><br>
+                                <label><input class="uk-checkbox uk-margin-small-right" type="checkbox" checked> > 50 people</label>
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label">Customizable</label>
+                            <div class="uk-form-controls uk-form-controls-text">
+                                <input class="uk-checkbox" type="checkbox">
+                            </div>
+                        </div>
+                    </form>
+                </li>
+                <li>
+                    <button class="uk-button uk-border-rounded uk-button-primary">Add New</button>
+                    <table class="uk-table uk-table-justify uk-table-divider uk-table-middle">
+                        <thead>
+                            <tr>
+                                <th>Reorder</th>
+                                <th>Title</th>
+                                <th>Summary</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody uk-sortable="handle: .uk-sortable-handle; cls-custom: sorting-item">
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Quote</td>
+                                <td class="sorting-hide">The green box contains a famous quote ...</td>
+                                <td class="sorting-hide"><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Note</td>
+                                <td>I play 3 notes, one after the other ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Rock</td>
+                                <td>This strange looking rocket is being sent to Mars by Elon Musk ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Balloons</td>
+                                <td>Multiply the number of white hot air balloons ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Rebus</td>
+                                <td>Solve the rebus equation ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Escalator</td>
+                                <td>I am riding this escalator on a loop ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Stocks</td>
+                                <td>Stocks To The Moon (STTM) is a fintech company ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>UIORXH</td>
+                                <td>This letter jumble is missing two of the same consonant ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Cross</td>
+                                <td>Solve the crossword ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Odd One Out</td>
+                                <td>Look at this image and tell us ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>The Master Puzzle</td>
+                                <td>After solving these 10 puzzles, you will have the following clues ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li>
+                    <button class="uk-button uk-border-rounded uk-button-primary">Add New</button>
+                    <table class="uk-table uk-table-justify uk-table-divider uk-table-middle">
+                        <thead>
+                            <tr>
+                                <th>Reorder</th>
+                                <th>Title</th>
+                                <th>Summary</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody uk-sortable="handle: .uk-sortable-handle; cls-custom: sorting-item">
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Quote - question</td>
+                                <td class="sorting-hide">The green box contains a famous quote ...</td>
+                                <td class="sorting-hide"><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Quote - answer</td>
+                                <td class="sorting-hide">"It isn't the mountains ahead to climb ...</td>
+                                <td class="sorting-hide"><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Note - question</td>
+                                <td>I play 3 notes, one after the other ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Note - answer</td>
+                                <td>A step / tone in western music is a whole note ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Rock - question</td>
+                                <td>This strange looking rocket is being sent to Mars by Elon Musk ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Rock - answer</td>
+                                <td>There are 6 triangles in total in the 'booster section' ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Balloons - question</td>
+                                <td>Multiply the number of white hot air balloons ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Balloon - answers</td>
+                                <td>White + Black = 6 ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Rebus - question</td>
+                                <td>Solve the rebus equation ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Rebus - answer</td>
+                                <td>Burglar - LA - (rat - at) = burg + ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Escalator - question</td>
+                                <td>I am riding this escalator on a loop ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Escalator - answer</td>
+                                <td>I am riding this escalator on a loop ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Stocks - question</td>
+                                <td>Stocks To The Moon (STTM) is a fintech company ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Stocks - answer</td>
+                                <td>Price when Billy McFarland gets "fyred": $35 ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>UIORXH - question</td>
+                                <td>This letter jumble is missing two of the same consonant ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>UIORXH - answer</td>
+                                <td>This letter jumble is missing two of the same consonant ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Cross - question</td>
+                                <td>Solve the crossword ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Cross - answer</td>
+                                <td>Solve the crossword ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Odd One Out - question</td>
+                                <td>Look at this image and tell us ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>Odd One Out - answer</td>
+                                <td>Look at this image and tell us ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>The Master Puzzle - reveal 1</td>
+                                <td>You should have had the following ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>The Master Puzzle - reveal 2</td>
+                                <td>Introducing the amazing climber from Burgundy, Alain Robert ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>The Master Puzzle - reveal 3</td>
+                                <td>In 2011 AD he climbed the 160 floors of the Burj Khalifa ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="uk-sortable-handle" uk-icon="icon: table"></span></td>
+                                <td>The Master Puzzle 4 - reveal 4</td>
+                                <td>So the master puzzle answer is ...</td>
+                                <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Edit</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

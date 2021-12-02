@@ -1,0 +1,4 @@
+{
+    "watch": ["index.scss"],
+    "ext": "scss"
+}

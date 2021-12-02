@@ -1,0 +1,282 @@
+// ==================================================================
+// UIkit
+// ==================================================================
+
+// Ukraine: custom variables/overwrites
+
+$global-primary-background: #09aa9c;
+$global-link-color: $global-primary-background;
+$global-link-hover-color: darken($global-link-color, 10%);
+// $global-secondary-background: #302326;
+$global-muted-background: #efefef;
+$global-font-family: 'Quicksand', sans-serif;
+$base-heading-font-family: 'Fredoka One', sans-serif;
+$base-em-color: black;
+
+// me: custom variables/overwrites
+
+$global-background: #fafafa;
+$global-secondary-background: #fc8ba1;
+$card-default-background: white;
+// $border-rounded-border-radius: 10px;
+$tab-item-font-size: inherit;
+$tab-item-border-width: 2px;
+$button-text-transform: none;
+// $button-secondary-background: #09aa9c;
+$tab-item-text-transform: none;
+$global-control-height: 35px;
+
+// default variables and mixins import
+
+@import "lib/uikit/src/scss/variables-theme.scss";
+@import "lib/uikit/src/scss/mixins-theme.scss";
+
+// custom mixins
+
+$button-font-size: $global-font-size;
+
+// UIkit import
+
+@import "lib/uikit/src/scss/uikit-theme.scss";
+
+// ==================================================================
+// Base
+// ==================================================================
+
+body {
+
+    margin: 0;
+    // background-image: url(res/background.png);
+    // background-size: 150px 150px;
+
+}
+
+header {
+
+    height: 80px;
+    background-color: #efefef;
+
+}
+
+// h1 {
+
+//     text-decoration: none;
+//     border-bottom: .0625em solid lighten($global-secondary-background, 17%);
+//     box-shadow: 0 -.25em 0 lighten($global-secondary-background, 17%) inset;
+
+//     display: inline;
+
+// }
+
+// ==================================================================
+// Game Links
+// ==================================================================
+
+.player-link {
+
+    width: 320px;
+    height: 35px;
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+.player-url {
+
+    overflow-x: hidden;
+
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #e5e5e5;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    font-family: 'Courier New', Courier, monospace;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.player-clipboard {
+
+    // box-sizing: content-box;
+
+    padding-left: $global-small-gutter;
+    padding-right: $global-small-gutter;
+
+    border-radius: 0 5px 5px 0;
+    border-style: solid;
+    border-color: #e5e5e5;
+    border-width: 1px 1px 1px 0;
+
+    opacity: 0.6;
+
+}
+
+.player-clipboard:hover {
+
+    cursor: pointer;
+    opacity: 1;
+
+}
+
+// ==================================================================
+// Game Buttons
+// ==================================================================
+
+.game-action {
+
+    float: right;
+
+}
+
+// ==================================================================
+// Game Notes
+// ==================================================================
+
+.note {
+
+    &:hover {
+
+        .edit-note-button {
+
+            opacity: 1;
+
+        }
+
+    }
+
+    input {
+
+        background-color: $card-default-background;
+        border: none;
+        padding: 0;
+
+        &:focus {
+
+            background-color: $card-default-background;
+            border-bottom: 1px solid black;
+
+        }
+
+    }
+
+    input:disabled {
+
+        background-color: $card-default-background;
+
+    }
+
+    .edit-note-button {
+
+        // padding-left: $global-small-gutter;
+        // padding-right: $global-small-gutter;
+
+        // box-sizing: content-box;
+
+        opacity: 0;
+        transition: opacity 0.1s;
+
+    }
+
+    .edit-note-button:hover {
+
+        cursor: pointer;
+        opacity: 1;
+    
+    }
+
+    .edit-note-buttons {
+
+        // padding-left: $global-small-gutter;
+        // padding-right: $global-small-gutter;
+
+        // box-sizing: content-box;
+
+        display: none;
+
+        span {
+
+            opacity: 0.6;
+            transition: opacity 0.1s;
+
+        }
+
+        span:hover {
+
+            cursor: pointer;
+            opacity: 1;
+
+        }
+    
+    }
+
+}
+
+// ==================================================================
+// Choose Game Grid
+// ==================================================================
+
+#game-grid {
+    
+    .uk-card {
+
+        filter: grayscale(50%);
+        transition: 0.2s;
+
+        &:hover {
+
+            filter: grayscale(0%);
+
+            .game-details {
+
+                opacity: 1;
+                height: 40px;
+
+                button {
+                    display: block;
+                }
+
+            }
+
+        }
+
+    }
+
+    .game-details {
+
+        opacity: 0;
+        height: 0px;
+        transition: 0.2s;
+
+        button {
+            display: none;
+        }
+
+    }
+
+}
+
+.uk-dropdown-nav {
+
+        .uk-active {
+            display: none;
+        }
+
+}
+
+// ==================================================================
+// Sortable
+// ==================================================================
+
+.sorting-item {
+    // background-color: blue;
+    text-decoration: underline;
+}
+
+.sorting-item .sorting-hide {
+    display: none;
+}
